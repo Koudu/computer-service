@@ -1,5 +1,5 @@
 {
-  "name": "calculator",
+  "name": "computer-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Koudu/calculator.git"
+    "url": "git+https://github.com/Koudu/computer-service.git"
   },
   "author": "Koudu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Koudu/calculator/issues"
+    "url": "https://github.com/Koudu/computer-service/issues"
   },
-  "homepage": "https://github.com/Koudu/calculator#readme",
+  "homepage": "https://github.com/Koudu/computer-service#readme",
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/plugin-transform-runtime": "^7.22.5",
@@ -40,8 +40,5 @@
     "webpack": "^5.87.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
-  },
-  "dependencies": {
-    "-": "^0.0.1"
   }
 }
