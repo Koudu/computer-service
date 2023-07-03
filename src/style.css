@@ -12,15 +12,10 @@ body {
   background-color: #2a2a2a;
 }
 
-/* .content {
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-} */
-
 .up-panel {
   display: grid;
   grid-template-areas:
-    "name-company-text processor-picture";
+    "name-company-text ";
 }
 
 
@@ -36,18 +31,6 @@ body {
 
 .name-company1 {
   font-weight: 600;
-
-}
-
-.menu-picture {
-  margin: 14px 14px;
-  margin-left: auto;
-  width: 40px;
-  height: 40px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --%3e%3csvg fill='%23ffffff' width='800px' height='800px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg' stroke='%23ffffff'%3e%3cg id='SVGRepo_bgCarrier' stroke-width='0'/%3e%3cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3e%3cg id='SVGRepo_iconCarrier'%3e%3cpath d='M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z'/%3e%3c/g%3e%3c/svg%3e");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .market {
@@ -83,6 +66,8 @@ body {
   cursor: pointer;
   user-select: none;
   color:#fff;
+  border: #2a2a2a;
+  background-color: #585858;
 }
 
 .price-product {
@@ -113,23 +98,20 @@ body {
   box-shadow:0 0 50px #b9e769;
 }
 
-.menu-panel {
-  width: 30px;
-  height: 100px;
+.product-background {
+  width: 300px;
+  height: 400px;
+  background-color: #2a2a2a;
 }
 
-.menu-panel._active {
-  opacity: 100;
-  pointer-events: all;
-  transform: translateX(0);
-  transition: transform 400ms, opacity 300ms;
+.characteristic-name {
+  font-size: 32px;
 }
-.menu-panel._inactive {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-100%);
-  transition: transform 300ms, opacity 500ms;
+
+.characteristic {
+  font-size: 20px;
 }
+
 
 
 @media (max-width: 1228px) {
