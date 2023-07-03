@@ -15,14 +15,15 @@
       </div>
     </header>
 
-    <div class="market">
+    <main class="content" id="root">
+    <section id="market-content" class="market">
       <div class="product one">
-        <div class="product-background">
+        <div class="product-background _inactive" id="product-Background">
           <div class="characteristic-name"> Характеристика: </div>
           <div class="characteristic"> Сокет  -  LGA1200 </div>
           <div class="characteristic"> Общее кол-во ядер - 4 </div>
           <div class="characteristic"> Макс. число потоков - 8 </div>
-          <div class="characteristic"> Кол-во производительных ядер -  4 </div>
+          <div class="characteristic"> Кол-во производ. ядер -  4 </div>
           <div class="characteristic"> Объем кэша L2 - 1 МБ </div>
           <div class="characteristic"> Объем кэша L3 - 6 МБ </div>
           <div class="characteristic"> Техпроцесс - 14 нм </div>
@@ -32,7 +33,7 @@
           <div class="characteristic"> Макс. частота оперативной памяти - 2666 МГц </div>
         </div>
         <img src="./processor.svg"/>
-        <button class="name-product"> Intel Core i3-10100f</button>
+        <button class="name-product" name="nameProduct"> Intel Core i3-10100f</button>
         <div class="price-product">5000 ₽</div>
         <button class="basket basket-green">Купить</button>
       </div>
@@ -87,9 +88,10 @@
         <button class="basket basket-green">Купить</button>
       </div>
 
-    </div>
+    </section>
     <section class="map">
       <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af5f544452f7cba9d9de898abf26b54d5d8b2f49977f071353891c10e9828bd68&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
     </section>
+  </main>
   </body>
 </html>
