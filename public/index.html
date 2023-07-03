@@ -5,7 +5,6 @@
   </head>
   <head>
     <meta charset="utf-8">
-    <title>Карта</title>
   
   </head>
   <body>
@@ -14,39 +13,72 @@
         <text class="name-company1">CONICS</text>
         <text class="name-company2">PC</text>
       </div>
-      <div class="processor-picture" onclick="this.classList.toggle('open')"></div>
+      <div class="menu-picture" name="menu-btn" onclick="this.classList.toggle('open')">
+        <button class="menu-panel _inactive" name="menu-panel"></button>
+      </div>
     </header>
+
     <div class="market">
       <div class="product one">
+        <img src="./processor.svg"/>
+        <div class="name-product"><a href="product.html">Intel Core i3-10100f</a></div>
+        <div class="price-product">5000 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
       <div class="product two">
+        <img src="./processor.svg"/>
+        <div href="product.html" class="name-product">Intel Core i5-11400f</div>
+        <div class="price-product">11 500 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
       <div class="product three">
+        <img src="./monitor.svg"/>
+        <div class="name-product">23.8" MSI G2412</div>
+        <div class="price-product">14 500 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
 
       <div class="product four">
+        <img src="./monitor.svg"/>
+        <div class="name-product">27" MSI Optix G273QF</div>
+        <div class="price-product">30 000 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
       <div class="product five">
+        <img src="./mouse.svg"/>
+        <div class="name-product">Razer DeathAdder V2</div>
+        <div class="price-product">4 500 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
       <div class="product six">
+        <img src="./mouse.svg"/>
+        <div class="name-product">Razer DeathAdder Essential</div>
+        <div class="price-product">1 500 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
 
       <div class="product seven">
+        <img src="./video-card.svg"/>
+        <div class="name-product">ASUS GeForce RTX 3060 Dual OC Edition</div>
+        <div class="price-product">35 000 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
       <div class="product eight">
+        <img src="./video-card.svg"/>
+        <div class="name-product">GIGABYTE GeForce RTX 3070 Ti GAMING OC</div>
+        <div class="price-product">57 800 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
       <div class="product nine">
+        <img src="./video-card.svg"/>
+        <div class="name-product">Palit GeForce RTX 4090 GameRock</div>
+        <div class="price-product">154 000 ₽</div>
         <button class="basket basket-green">В корзину</button>
       </div>
+
     </div>
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af5f544452f7cba9d9de898abf26b54d5d8b2f49977f071353891c10e9828bd68&amp;width=900&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    <section class="map">
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af5f544452f7cba9d9de898abf26b54d5d8b2f49977f071353891c10e9828bd68&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </section>
   </body>
 </html>

@@ -1,5 +1,4 @@
 body {
-  font-family: "Roboto", sans-serif;
   background-color: #585858;
   color: #fff;
   font-family: Arial,Bicubik;
@@ -12,6 +11,11 @@ body {
   height: 60px;
   background-color: #2a2a2a;
 }
+
+/* .content {
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+} */
 
 .up-panel {
   display: grid;
@@ -35,22 +39,21 @@ body {
 
 }
 
-.processor-picture {
+.menu-picture {
+  margin: 14px 14px;
   margin-left: auto;
-  width: 25px;
-  height: 50px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg fill='%23fff' width='800px' height='800px' viewBox='0 -3 32 32' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid'%3e%3cpath d='M30.000,21.000 L17.000,21.000 L17.000,24.000 L22.047,24.000 C22.600,24.000 23.047,24.448 23.047,25.000 C23.047,25.552 22.600,26.000 22.047,26.000 L10.047,26.000 C9.494,26.000 9.047,25.552 9.047,25.000 C9.047,24.448 9.494,24.000 10.047,24.000 L15.000,24.000 L15.000,21.000 L2.000,21.000 C0.898,21.000 0.000,20.103 0.000,19.000 L0.000,2.000 C0.000,0.897 0.898,0.000 2.000,0.000 L30.000,0.000 C31.103,0.000 32.000,0.897 32.000,2.000 L32.000,19.000 C32.000,20.103 31.103,21.000 30.000,21.000 ZM2.000,2.000 L2.000,19.000 L29.997,19.000 L30.000,2.000 L2.000,2.000 Z'/%3e%3c/svg%3e");
-  border: 2px solid #ffffff;
-  padding: 5px 20px;
-  box-shadow:0 0 20px #ffffff;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --%3e%3csvg fill='%23ffffff' width='800px' height='800px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg' stroke='%23ffffff'%3e%3cg id='SVGRepo_bgCarrier' stroke-width='0'/%3e%3cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3e%3cg id='SVGRepo_iconCarrier'%3e%3cpath d='M0.844 6.050c-0.256-0.256-0.381-0.581-0.381-0.975s0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381s0.381 0.581 0.381 0.975-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381zM31.306 14.963c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.125 0.975 0.381zM31.306 25.819c0.256 0.256 0.381 0.581 0.381 0.975s-0.125 0.719-0.381 0.975-0.581 0.381-0.975 0.381h-28.512c-0.394 0-0.719-0.125-0.975-0.381s-0.381-0.581-0.381-0.975 0.125-0.719 0.381-0.975 0.581-0.381 0.975-0.381h28.512c0.394 0 0.719 0.131 0.975 0.381z'/%3e%3c/g%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .market {
+  padding: 24px 0px;
   display: grid;
-  grid-template-areas:
-    "one two three"
-    "four five siz"
-    "seven eight nine";
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   justify-items: center;
 }
@@ -62,10 +65,31 @@ body {
   border: 2px solid #ff002b;
   padding: 5px 20px;
   box-shadow:0 0 20px #ff002b;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.product img {
+  width: 230px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.name-product {
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  color:#fff;
+}
+
+.price-product {
+  font-size: 26px;
 }
 
 .basket {
-  margin: 320px 50px;
   width: 200px;
   height: 50px;
   border: 1px solid;
@@ -89,3 +113,39 @@ body {
   box-shadow:0 0 50px #b9e769;
 }
 
+.menu-panel {
+  width: 30px;
+  height: 100px;
+}
+
+.menu-panel._active {
+  opacity: 100;
+  pointer-events: all;
+  transform: translateX(0);
+  transition: transform 400ms, opacity 300ms;
+}
+.menu-panel._inactive {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: transform 300ms, opacity 500ms;
+}
+
+
+@media (max-width: 1228px) {
+  .market {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 790px) {
+  .market {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 320px) {
+  .product {
+    width: 230px;
+  }
+}
