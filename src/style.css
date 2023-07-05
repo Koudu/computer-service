@@ -7,6 +7,10 @@
   width: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--main-background-color);
   color: #fff;
@@ -22,9 +26,7 @@ body {
 }
 
 .up-panel {
-  display: grid;
-  grid-template-areas:
-    "name-company-text ";
+  display: flex;
 }
 
 .content {
@@ -33,7 +35,7 @@ body {
 }
 
 .name-company-text {
-  margin: 10px 10px;
+  margin: 10px auto 10px 10px;
   height: 45px;
   width: 225px;
   color: #fff;
@@ -44,6 +46,53 @@ body {
 
 .name-company1 {
   font-weight: 600;
+}
+
+.basket-btn {
+  margin: 6px 20px;
+  height: 45px;
+  width: 45px;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg fill='%23fff' width='800px' height='800px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M31.739 8.875c-0.186-0.264-0.489-0.422-0.812-0.422h-21.223l-1.607-5.54c-0.63-2.182-2.127-2.417-2.741-2.417h-4.284c-0.549 0-0.993 0.445-0.993 0.993s0.445 0.993 0.993 0.993h4.283c0.136 0 0.549 0 0.831 0.974l5.527 20.311c0.12 0.428 0.511 0.724 0.956 0.724h13.499c0.419 0 0.793-0.262 0.934-0.657l4.758-14.053c0.11-0.304 0.064-0.643-0.122-0.907zM25.47 22.506h-12.046l-3.161-12.066h19.253zM23.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5zM14.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-btn {
+  margin: 6px 10px;
+  height: 45px;
+  width: 45px;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 7H20M4 12H20M4 17H20' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-background {
+  margin-left: auto;
+  width: 100%;
+  display: flex;
+  width: 300px;
+  align-items: flex-start;
+  background-color: #383838;
+  position: absolute;
+  top: 60;
+  right: 0;
+}
+
+.menu-background__content {
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.menu-background._inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-background._active {
+  opacity: 100%;
+  pointer-events: all;
 }
 
 .market {
@@ -64,7 +113,7 @@ body {
   font-size: 16px;
   transition: 0.2s;
   cursor: pointer;
-  user-select: none;
+  user-select: none;  
 }
 
 .basket-green {
@@ -77,6 +126,8 @@ body {
   border: 1px solid #b9e769;
   box-shadow:0 0 50px #b9e769;
 }
+
+
 
 
 

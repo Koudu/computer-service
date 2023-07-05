@@ -38,7 +38,7 @@ export default function ItemCard(item) {
         ${item.name}</button>
       <div class="price-product">${item.price} ₽</div>
       <button id="item-buy-${item.id}" class="basket basket-green">
-        Купить
+        в корзину
       </button>
     </div>
       `;
@@ -56,7 +56,7 @@ export default function ItemCard(item) {
         closeBtn.addEventListener("click", clickHandler);
       }
       if (buy) {
-        closeBtn.addEventListener("click", clickHandler);
+        buy.addEventListener("click", clickHandler);
       }
     },
     onDelete: () => {
@@ -67,7 +67,7 @@ export default function ItemCard(item) {
         closeBtn.removeEventListener("click", clickHandler);
       }
       if (buy) {
-        closeBtn.removeEventListener("click", clickHandler);
+        buy.removeEventListener("click", clickHandler);
       }
     },
   };

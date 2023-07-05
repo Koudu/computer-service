@@ -21,11 +21,46 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "./src/assets/23.8-MSI-G2412.jpg", to: "./assets/23.8-MSI-G2412.jpg" },
-        { from: "./src/assets/27-MSI-G27CQ4-E2.jpg", to: "./assets/27-MSI-G27CQ4-E2.jpg" },
-        { from: "./src/assets/mouse.svg", to: "./assets/mouse.svg" },
-        { from: "./src/assets/video-card.svg", to: "./assets/video-card.svg" },
-        { from: "./src/assets/close.svg", to: "./assets/close.svg" },
+        {
+          from: "./src/assets/23.8-MSI-G2412.jpg",
+          to: "./assets/23.8-MSI-G2412.jpg",
+        },
+        {
+          from: "./src/assets/27-MSI-G27CQ4-E2.jpg",
+          to: "./assets/27-MSI-G27CQ4-E2.jpg",
+        },
+        {
+          from: "./src/assets/close.svg",
+          to: "./assets/close.svg",
+        },
+        {
+          from: "./src/assets/ARDOR-GAMING-RAGE-H290.jpg",
+          to: "./assets/ARDOR-GAMING-RAGE-H290.jpg",
+        },
+        {
+          from: "./src/assets/GIGABYTE-GeForce-RTX-3060-GAMING-OC.jpg",
+          to: "./assets/GIGABYTE-GeForce-RTX-3060-GAMING-OC.jpg",
+        },
+        {
+          from: "./src/assets/GIGABYTE-GeForce-RTX-3070-GAMING-OC.jpg",
+          to: "./assets/GIGABYTE-GeForce-RTX-3070-GAMING-OC.jpg",
+        },
+        {
+          from: "./src/assets/Intel-Core-i3-10100f.jpg",
+          to: "./assets/Intel-Core-i3-10100f.jpg",
+        },
+        {
+          from: "./src/assets/Palit-GeForce-RTX-4090-GameRock-OmniBlack.jpg",
+          to: "./assets/Palit-GeForce-RTX-4090-GameRock-OmniBlack.jpg",
+        },
+        {
+          from: "./src/assets/Razer-DeathAdder-V2.jpg",
+          to: "./assets/Razer-DeathAdder-V2.jpg",
+        },
+        {
+          from: "./src/assets/A4Tech-Bloody-ES5.jpg",
+          to: "./assets/A4Tech-Bloody-ES5.jpg",
+        },
       ],
     }),
   ],
