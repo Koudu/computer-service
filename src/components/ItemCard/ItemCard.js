@@ -5,7 +5,6 @@ export default function ItemCard(item) {
   let productBg;
   let btn;
   let closeBtn;
-  let buy;
   const clickHandler = () => {
     if (!productBg) {
       return;
@@ -37,7 +36,8 @@ export default function ItemCard(item) {
       <button id="item-btn-${item.id}" class="name-product" name="nameProduct">
         ${item.name}</button>
       <div class="price-product">${item.price} ₽</div>
-      <button id="item-buy-${item.id}" class="basket basket-green">
+      <button 
+        id="item-buy-${item.id}" name="item-buy" class="basket basket-green">
         в корзину
       </button>
     </div>
@@ -48,15 +48,11 @@ export default function ItemCard(item) {
       closeBtn = document.getElementById(`product-Backgr-${item.id}`);
       btn = document.getElementById(`item-btn-${item.id}`);
       closeBtn = document.getElementById(`item-close-btn-${item.id}`);
-      buy = document.getElementById(`item-buy-${item.id}`);
       if (btn) {
         btn.addEventListener("click", clickHandler);
       }
       if (closeBtn) {
         closeBtn.addEventListener("click", clickHandler);
-      }
-      if (buy) {
-        buy.addEventListener("click", clickHandler);
       }
     },
     onDelete: () => {
@@ -65,9 +61,6 @@ export default function ItemCard(item) {
       }
       if (closeBtn) {
         closeBtn.removeEventListener("click", clickHandler);
-      }
-      if (buy) {
-        buy.removeEventListener("click", clickHandler);
       }
     },
   };

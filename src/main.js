@@ -317,6 +317,7 @@ const monitor = items.filter((i) => i.type === "Monitor");
 const mouse = items.filter((i) => i.type === "Mouse");
 const videocard = items.filter((i) => i.type === "Video-card");
 const pc = items.filter((i) => i.type === "PC");
+const cart = [];
 const cards = items.map((i) => ItemCard(i));
 if (market) {
   market.innerHTML = cards.map((c) => c.render()).join("");
@@ -339,5 +340,15 @@ body?.addEventListener("click", (e) => {
     menuBackground.classList.add("_inactive");
     menuBackground.classList.remove("_active");
     return;
+  }
+  if (name === "item-buy") {
+    const id = e.target.getAttribute("id");
+    if (!id) {
+      return;
+    }
+    const realID = Number(id.replace("item-buy-", ""));
+
+    const productItem = items.find((a) => a.id === realID);
+    cart.push(productItem);
   }
 });

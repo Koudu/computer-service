@@ -69,15 +69,16 @@ body {
 }
 
 .menu-background {
+  padding: 30px 10px 0px 20px;
   margin-left: auto;
-  width: 100%;
-  display: flex;
-  width: 300px;
-  align-items: flex-start;
+  width:300px;
+  height: 100%;
   background-color: #383838;
   position: absolute;
   top: 60;
   right: 0;
+  font-size: 26px;
+  position: center;
 }
 
 .menu-background__content {
@@ -91,8 +92,38 @@ body {
 }
 
 .menu-background._active {
-  opacity: 100%;
+  opacity: 100;
   pointer-events: all;
+}
+
+.menuProduct {
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 30px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position:relative;
+  overflow:hidden;
+  margin: 0 20px;
+}
+
+.menuProduct:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  background : #ffffff;
+  left: 50%;
+  height: 3px;
+  border-radius: 100px;
+  bottom: 0;
+  transition: all .3s;
+  opacity: 0.7;
+}
+
+.menuProduct:hover:before {
+  width: 100%;
+  left:0;
 }
 
 .market {
