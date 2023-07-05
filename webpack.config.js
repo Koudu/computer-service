@@ -21,8 +21,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "./src/assets/processor.svg", to: "./assets/processor.svg" },
-        { from: "./src/assets/monitor.svg", to: "./assets/monitor.svg" },
+        { from: "./src/assets/23.8-MSI-G2412.jpg", to: "./assets/23.8-MSI-G2412.jpg" },
+        { from: "./src/assets/27-MSI-G27CQ4-E2.jpg", to: "./assets/27-MSI-G27CQ4-E2.jpg" },
         { from: "./src/assets/mouse.svg", to: "./assets/mouse.svg" },
         { from: "./src/assets/video-card.svg", to: "./assets/video-card.svg" },
         { from: "./src/assets/close.svg", to: "./assets/close.svg" },
