@@ -1,5 +1,6 @@
 import "./style.css";
 import ItemCard from "./components/ItemCard/ItemCard";
+import Basket from "./components/BasketWindow";
 
 const market = document.getElementById("market-content");
 const items = [
@@ -38,7 +39,7 @@ const items = [
       "Макс. поддерживаемый объем памяти - 128 ГБ",
       "Макс. частота оперативной памяти - 3200 МГц",
     ],
-    img: "",
+    img: "./assets/Intel-Core-i3-10100f.jpg",
     name: "Intel Core i5-11400f",
     price: "11 500",
     type: "CPU",
@@ -326,74 +327,13 @@ cards.forEach((c) => {
   c.onRender();
 });
 
-export default function basketMenu(description) {
-  return `<div class="basket-window">${description}</div>`;
-}
-export function basketWindow(item) {
-  let basketBg;
-  const click = () => {
-    if (!basketBg) {
-      return;
-    }
-    if (basketBg.classList.contains("_inactive")) {
-      basketBg.classList.remove("_inactive");
-      basketBg.classList.add("_active");
-      return;
-    }
-    basketBg.classList.add("_inactive");
-    basketBg.classList.remove("_active");
-  };
-  return {
-    render: () => {
-      return `
-      <div class="product">
-      <div class="product-background _inactive" id="product-Backgr-${item.id}">
-        <header>
-        <div class="characteristic-name"> Характеристика: 
-        <img id="item-close-btn-${item.id}" 
-          class="close" src="./assets/close.svg">
-        </img></div>
-        </header>
-        <main class="product-background__content">
-          ${item.description.map((s) => itemDetails(s)).join("")}
-        </main>
-      </div>
-      <img class="photo-product" src="${item.img}"/>
-      <button id="item-btn-${item.id}" class="name-product" name="nameProduct">
-        ${item.name}</button>
-      <div class="price-product">${item.price} ₽</div>
-      <button 
-        id="item-buy-${item.id}" name="item-buy" class="basket basket-green">
-        в корзину
-      </button>
-    </div>
-      `;
-    },
-    onRender: () => {
-      productBg = document.getElementById(`product-Backgr-${item.id}`);
-      closeBtn = document.getElementById(`product-Backgr-${item.id}`);
-      btn = document.getElementById(`item-btn-${item.id}`);
-      closeBtn = document.getElementById(`item-close-btn-${item.id}`);
-      if (btn) {
-        btn.addEventListener("click", click);
-      }
-      if (closeBtn) {
-        closeBtn.addEventListener("click", click);
-      }
-    },
-    onDelete: () => {
-      if (btn) {
-        btn.removeEventListener("click", click);
-      }
-      if (closeBtn) {
-        closeBtn.removeEventListener("click", click);
-      }
-    },
-  };
-}
-
 const body = document.querySelector("body");
 const menuBackground = document.getElementById("menu-background");
+const basketEl = document.getElementById("basket-root");
+
+const basket = new Basket(basketEl);
+basket.render(cart);
+basket.onRender();
 
 body?.addEventListener("click", (e) => {
   const name = e.target.getAttribute("name");
@@ -416,5 +356,8 @@ body?.addEventListener("click", (e) => {
 
     const productItem = items.find((a) => a.id === realID);
     cart.push(productItem);
+    basket.onDelete();
+    basket.render(cart);
+    basket.onRender();
   }
 });
