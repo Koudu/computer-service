@@ -313,19 +313,25 @@ const items = [
   },
 ];
 
-const cpu = items.filter((i) => i.type === "CPU");
-const monitor = items.filter((i) => i.type === "Monitor");
-const mouse = items.filter((i) => i.type === "Mouse");
-const videocard = items.filter((i) => i.type === "Video-card");
-const pc = items.filter((i) => i.type === "PC");
+const categorys = ["PC", "CPU", "Video-card", "Monitor", "Mouse"];
 const cart = [];
-const cards = items.map((i) => ItemCard(i));
-if (market) {
-  market.innerHTML = cards.map((c) => c.render()).join("");
+const AllCards = items.map((i) => ItemCard(i));
+let currnetCards = AllCards.slice(0, 6);
+
+function renderProducts(cards) {
+  if (market) {
+    market.innerHTML = cards.map((c) => c.render()).join("");
+  }
+  cards.forEach((c) => {
+    c.onRender();
+  });
 }
-cards.forEach((c) => {
-  c.onRender();
-});
+
+function removeListemers(cards) {
+  cards.forEach((c) => c.onDelete());
+}
+
+renderProducts(currnetCards);
 
 const body = document.querySelector("body");
 const menuBackground = document.getElementById("menu-background");
@@ -359,5 +365,18 @@ body?.addEventListener("click", (e) => {
     basket.onDelete();
     basket.render(cart);
     basket.onRender();
+    return;
+  }
+  if (name === "All") {
+    removeListemers(currnetCards);
+    currnetCards = AllCards;
+    renderProducts(currnetCards);
+    return;
+  }
+
+  if (categorys.includes(name)) {
+    removeListemers(currnetCards);
+    currnetCards = AllCards.filter((i) => i.getType() === name);
+    renderProducts(currnetCards);
   }
 });

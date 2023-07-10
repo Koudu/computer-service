@@ -63,5 +63,6 @@ export default function ItemCard(item) {
         closeBtn.removeEventListener("click", clickHandler);
       }
     },
+    getType: () => item.type,
   };
 }

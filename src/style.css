@@ -106,6 +106,8 @@ body {
   position:relative;
   overflow:hidden;
   margin: 0 20px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .menuProduct:before {
@@ -124,6 +126,27 @@ body {
 .menuProduct:hover:before {
   width: 100%;
   left:0;
+}
+
+.menu-all-products {
+  width: 225px;
+}
+
+.menu-pc {
+  width: 220px;
+}
+
+.menu-video-card {
+  width: 230px;
+}
+
+.menu-monitor {
+  width: 220px;
+}
+
+.menu-mouse {
+  width: 210px;
+
 }
 
 .market {
@@ -159,19 +182,21 @@ body {
 }
 
 .bascet-background {
+  padding: 10px 0 0 20px;
   width: 500px;
   height: 300px;
-  padding: 20px 15px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   background-color: #383838;
   color: #fff;
   font-size: 20px;
-  position: absolute;
   margin-left: auto;
   top: 54px;
   right: -84px;
   border-radius:0px 0px 0px 20px;
   align-items: flex-start;
+  position: absolute;
+  overflow: hidden;
 }
 
 .bascet-background._inactive {
@@ -183,6 +208,21 @@ body {
   opacity: 100;
   pointer-events: all;
   z-index: 100;
+}
+
+.bascet-background header,
+.bascet-background footer {
+  height: var(--header-height);
+}
+
+.bascet-product {
+  flex: 1 1 auto;
+  height: calc(100% - var(--header-height) * 2);
+  overflow-y: auto;
+}
+
+.bascet-product__item {
+  padding: 3px;
 }
 
 .text-bascet {
@@ -199,6 +239,7 @@ body {
   font-weight: center;
   font-size: 16px;
   transition: 0.2s;
+  position: absolute;
   cursor: pointer;
   user-select: none;
   right: 0;
@@ -214,6 +255,36 @@ body {
   border: 1px solid #b9e769;
   box-shadow:0 0 50px #b9e769;
 }
+
+.back-btn {
+  width: 150px;
+  height: 50px;
+  border: 1px solid;
+  font-size: 20px;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: center;
+  transition: 0.2s;
+  cursor: pointer;
+  user-select: none;
+  right: 0;
+}
+
+.forward-btn {
+  width: 150px;
+  border: 1px solid;
+  height: 50px;
+  font-size: 20px;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: center;
+  transition: 0.2s;
+  cursor: pointer;
+  user-select: none;
+  right: 0;
+}
+
+
 
 
 

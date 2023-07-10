@@ -1,50 +1,3 @@
-// let basketBg;
-// let basketmenu;
-
-// export default function basketMenu(description) {
-//   return `<div class="basket-window">${description}</div>`;
-// }
-// export function basketWindow(item) {
-//   const click = () => {
-//     if (!basketBg) {
-//       return;
-//     }
-//     if (basketmenu.classList.contains("_inactive")) {
-//       basketmenu.classList.remove("_inactive");
-//       basketmenu.classList.add("_active");
-//       return;
-//     }
-//     basketmenu.classList.add("_inactive");
-//     basketmenu.classList.remove("_active");
-//   };
-//   return {
-//     render: () => {
-//       return `
-//       <div class="bascet-menu">
-//       <div class="bascet-background _inactive" id="bascet-Backgr">
-//         <div class="bascet-product" id="bascet-product">
-//         ${item.productItem}
-//         </div>
-//       </div>
-//       </div>
-//       `;
-//     },
-//     onRender: () => {
-//       basketBg = document.getElementById(`item-bascet`);
-//       basketBg = document.getElementById(`item-bascet-Backgr`);
-//       basketmenu = document.getElementById(`item-bascet-Backgr`);
-//       if (basketBg) {
-//         basketBg.addEventListener("click", click);
-//       }
-//     },
-//     onDelete: () => {
-//       if (basketBg) {
-//         basketBg.removeEventListener("click", click);
-//       }
-//     },
-//   };
-// }
-
 export default function Basket(rootEl) {
   let basketBg;
   let basketmenu;
@@ -61,6 +14,18 @@ export default function Basket(rootEl) {
     basketmenu.classList.remove("_active");
     active = !active;
   };
+  const body = document.querySelector("body");
+
+  body?.addEventListener("click", (e) => {
+    const name = e.target.getAttribute("name");
+    if (name === "to-order") {
+      alert("Ожидайте заказ!");
+    }
+  });
+
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
 
   return {
     render(item) {
@@ -68,25 +33,33 @@ export default function Basket(rootEl) {
       <div class="basket-btn" id="item-bascet-btn">
         <div class="bascet-background ${active ? "_active" : "_inactive"}" 
           id="bascet-Backgr">
-          <div class="text-bascet">Корзина</div>
+          <header class="text-bascet">Корзина</header>
           <div class="bascet-product" id="bascet-product">
-          ${item.map((value) => `${value.name}: ${value.price}`).join("<br />")}
+          ${item.map((value) => `<div class="bascet-product__item">${value.name}: ${value.price}</div>`).join("")}
           </div>
-          <button class="to-order to-order-green">Заказать</button>
+          <footer>
+            <button class="to-order to-order-green" name="to-order">Заказать</button>
+          </footer>
         </div>
       </div>
       `;
     },
     onRender() {
-      basketBg = document.getElementById(`item-bascet-btn`);
-      basketmenu = document.getElementById(`bascet-Backgr`);
+      basketBg = rootEl.querySelector(`#item-bascet-btn`);
+      basketmenu = rootEl.querySelector(`#bascet-Backgr`);
       if (basketBg) {
         basketBg.addEventListener("click", onClick);
+      }
+      if (basketmenu) {
+        basketmenu.addEventListener("click", stopPropagation);
       }
     },
     onDelete() {
       if (basketBg) {
         basketBg.removeEventListener("click", onClick);
+      }
+      if (basketmenu) {
+        basketmenu.removeEventListener("click", stopPropagation);
       }
     },
   };
