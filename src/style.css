@@ -256,11 +256,16 @@ body {
   box-shadow:0 0 50px #b9e769;
 }
 
+.list-more {
+  margin: 0px 807px ;
+}
+
 .back-btn {
   width: 150px;
   height: 50px;
   border: 1px solid;
   font-size: 20px;
+  color: #fff;
   background-color: transparent;
   text-transform: uppercase;
   font-weight: center;
@@ -270,11 +275,19 @@ body {
   right: 0;
 }
 
+.back-active:hover {
+  background-color: #ec0128;
+  color: #fff;
+  border: 1px solid #ec0128;
+  box-shadow:0 0 50px #ec0128;
+}
+
 .forward-btn {
   width: 150px;
   border: 1px solid;
   height: 50px;
   font-size: 20px;
+  color: #fff;
   background-color: transparent;
   text-transform: uppercase;
   font-weight: center;
@@ -282,6 +295,13 @@ body {
   cursor: pointer;
   user-select: none;
   right: 0;
+}
+
+.forword-active:hover {
+  background-color: #ec0128;
+  color: #fff;
+  border: 1px solid #ec0128;
+  box-shadow:0 0 50px #ec0128;
 }
 
 
