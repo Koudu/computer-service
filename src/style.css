@@ -20,7 +20,7 @@ body {
 }
 
 .up-panel {
-  max-width: 1920px;
+  max-width: 100%;
   height: var(--header-height);
   background-color: #2a2a2a;
 }
@@ -73,13 +73,12 @@ body {
   padding: 30px 10px 0px 20px;
   margin-left: auto;
   width:300px;
-  height: 100%;
+  height: calc(100vh - var(--header-height));
   background-color: #383838;
   position: absolute;
   top: 60;
   right: 0;
   font-size: 26px;
-  position: center;
 }
 
 .menu-background__content {
@@ -257,10 +256,15 @@ body {
 }
 
 .list-more {
-  margin: 0px 807px ;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "back-btn forward-btn";
+  justify-items: center;
 }
 
 .back-btn {
+  margin: 10px;
   width: 150px;
   height: 50px;
   border: 1px solid;
@@ -273,6 +277,7 @@ body {
   cursor: pointer;
   user-select: none;
   right: 0;
+  position: center;
 }
 
 .back-active:hover {
@@ -283,6 +288,7 @@ body {
 }
 
 .forward-btn {
+  margin: 10px;
   width: 150px;
   border: 1px solid;
   height: 50px;
@@ -295,6 +301,7 @@ body {
   cursor: pointer;
   user-select: none;
   right: 0;
+  position: center;
 }
 
 .forword-active:hover {
