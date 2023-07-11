@@ -379,4 +379,11 @@ body?.addEventListener("click", (e) => {
     currnetCards = AllCards.filter((i) => i.getType() === name);
     renderProducts(currnetCards);
   }
+  // if (name === "forward-btn") {
+  //   const newPosts = await getproduct(10, posts.length, userId);
+  //   if (newPosts.length === 0) {
+  //     loader.innerHTML = `<div class="wrap"><h1> На этом, пока что все</h1></div>`;
+  //     return;
+  //   }
+  // }
 });
