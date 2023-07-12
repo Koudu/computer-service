@@ -1,6 +1,7 @@
 import "./style.css";
 import ItemCard from "./components/ItemCard/ItemCard";
 import Basket from "./components/BasketWindow";
+import { getProduct } from "./api/product";
 
 const market = document.getElementById("market-content");
 const items = [
@@ -316,7 +317,39 @@ const items = [
 const categorys = ["PC", "CPU", "Video-card", "Monitor", "Mouse"];
 const cart = [];
 const AllCards = items.map((i) => ItemCard(i));
-let currnetCards = AllCards.slice(0, 6);
+
+let currentPage = 1;
+const limit = 6;
+let categoryName = "All";
+
+function getCategory(name) {
+  if (categorys.includes(name)) {
+    return AllCards.filter((i) => i.getType() === name);
+  }
+  return AllCards;
+}
+
+function getPage(pageNum, cards) {
+  return getProduct(cards, (pageNum - 1) * limit, limit);
+}
+
+let currnetCards = getPage(currentPage, getCategory(categoryName));
+
+function nextPage(cards) {
+  if ((currentPage - 1) * limit >= cards.length - limit) {
+    return getPage(currentPage, cards);
+  }
+  currentPage += 1;
+  return getPage(currentPage, cards);
+}
+
+function prevPage(cards) {
+  if (currentPage === 1) {
+    return getPage(currentPage, cards);
+  }
+  currentPage -= 1;
+  return getPage(currentPage, cards);
+}
 
 function renderProducts(cards) {
   if (market) {
@@ -341,7 +374,7 @@ const basket = new Basket(basketEl);
 basket.render(cart);
 basket.onRender();
 
-body?.addEventListener("click", (e) => {
+body?.addEventListener("click", async (e) => {
   const name = e.target.getAttribute("name");
   if (name === "item-menu" && menuBackground) {
     if (menuBackground?.classList.contains("_inactive")) {
@@ -368,20 +401,39 @@ body?.addEventListener("click", (e) => {
     return;
   }
   if (name === "All") {
+    categoryName = name;
+    currentPage = 1;
     removeListemers(currnetCards);
-    currnetCards = AllCards;
+    currnetCards = getPage(currentPage, getCategory(name));
     renderProducts(currnetCards);
     return;
   }
 
   if (categorys.includes(name)) {
+    categoryName = name;
+    currentPage = 1;
     removeListemers(currnetCards);
-    currnetCards = AllCards.filter((i) => i.getType() === name);
+    currnetCards = getPage(currentPage, getCategory(name));
     renderProducts(currnetCards);
+    return;
+  }
+
+  if (name === "forward-btn") {
+    removeListemers(currnetCards);
+    currnetCards = nextPage(getCategory(categoryName));
+    renderProducts(currnetCards);
+    return;
+  }
+
+  if (name === "back-btn") {
+    removeListemers(currnetCards);
+    currnetCards = prevPage(getCategory(categoryName));
+    renderProducts(currnetCards);
+    // return;
   }
   // if (name === "forward-btn") {
-  //   const newPosts = await getproduct(10, posts.length, userId);
-  //   if (newPosts.length === 0) {
+  //   const newProduct = await getProduct(10, posts.length);
+  //   if (newProduct.length === 0) {
   //     loader.innerHTML = `<div class="wrap"><h1> На этом, пока что все</h1></div>`;
   //     return;
   //   }

@@ -1,17 +1,6 @@
-import ItemCard from "./components/ItemCard/ItemCard";
-
-export async function getproduct(limit = 10, start = 0) {
-  const respose = await fetch(
-    ItemCard();
-  );
-  const data = await respose.json();
-  return data;
-}
-
-export async function getPost(postId) {
-  const respose = await fetch(
-    ItemCard();
-  );
-  const data = await respose.json();
-  return data;
+export function getProduct(list, start = 0, limit = 6) {
+  if (list && Array.isArray(list)) {
+    return [...list].splice(start, limit);
+  }
+  return [];
 }
